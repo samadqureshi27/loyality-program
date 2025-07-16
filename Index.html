@@ -177,7 +177,7 @@
         .signup-btn {
             background-color: #f1c40f;
             color: #000;
-            padding: 12px 22px;
+            padding: 12px 22px;     
             border-radius: 6px;
             font-weight: lighter;
             font-size: 15px;
@@ -191,6 +191,44 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
         }
+
+
+
+
+        .phone1,
+        .phone2 {
+            margin: 0%;
+            position: absolute;
+            max-width: 100%;
+            /* height: auto; */
+            transition: all 0.3s ease;
+        }
+
+        .phone1 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone2 {
+            position: absolute;
+            top: 40px;
+            /* push it down */
+            left: 40px;
+            /* push it to the right */
+            z-index: 1;
+            opacity: 0.8;
+            transform: scale(0.95);
+            /* optional shrink */
+        }
+
+        
+
+
+
+
+
+
+
 
         /* HERO SECTION */
         .hero-container {
@@ -209,12 +247,12 @@
             flex: 1;
             min-width: 350px;
             /* max-width: 650px; */
-            padding: 30px;
+            padding: 10px;
             animation: fadeInLeft 1s ease-out 0.8s both;
         }
 
         .left-hero h1 {
-            font-size: 70px;
+            font-size: 57px;
             font-weight: 400;
             margin-bottom: 30px;
             line-height: 1.2;
@@ -225,13 +263,18 @@
         }
 
         .left-hero p {
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 40px;
             color: #ccc;
             animation: fadeInUp 1s ease-out 1.2s both;
         }
 
         .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* optional: centers horizontally */
+            /* gap: 5px; space between buttons */
             animation: fadeInUp 1s ease-out 1.4s both;
         }
 
@@ -240,7 +283,7 @@
             margin-right: 15px;
             border-radius: 8px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: lighter;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
@@ -271,11 +314,12 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
         }
+
         .signup,
-.demo {
-    width: 200px;
-    text-align: center;
-}
+        .demo {
+            width: 200px;
+            text-align: center;
+        }
 
 
         .payments {
@@ -291,22 +335,18 @@
             transition: all 0.3s ease;
         }
 
-        /* .payments img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        } */
-
         .right-hero {
-            flex: 1;
-            min-width: 350px;
-            max-width: 500px;
+            position: relative;
+            flex: 2;
+            min-width: 50px;
+            /* max-width: 500px; */
             text-align: center;
             animation: fadeInRight 1s ease-out 1s both;
         }
 
         .right-hero img {
-            width: 100%;
-            max-width: 500px;
+            /* width: 100%; */
+            max-width: 790px;
             border-radius: 20px;
             animation: float 6s ease-in-out infinite;
             transition: all 0.3s ease;
@@ -350,30 +390,16 @@
         }
 
         .cards-grid {
-            flex: 4;
+            flex: 3;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 60px;
             padding: 30px;
-        }
-
-        .card {
-            transition: all 0.3s ease;
-            padding: 20px;
-            border-radius: 15px;
-            background: #f9f9f9;
-            border: 1px solid #eee;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            background: #fff;
         }
 
         .card img {
             width: 100%;
-            max-width: 180px;
+            max-width: 680px;
             border-radius: 20px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
@@ -409,7 +435,6 @@
 
         .scanner-left,
         .scanner-right {
-
             flex: 1;
             min-width: 350px;
             max-width: 600px;
@@ -417,7 +442,7 @@
         }
 
         .scanner-left h1 {
-            font-size: 40px;
+            font-size: 60px;
             margin-bottom: 20px;
             background: white;
             -webkit-background-clip: text;
@@ -426,7 +451,7 @@
         }
 
         .scanner-left p {
-            font-size: 18px;
+            font-size: 30px;
             line-height: 1.7;
             color: #ccc;
             margin-bottom: 30px;
@@ -451,8 +476,8 @@
         }
 
         .scanner-right img {
-            width: 100%;
-            max-width: 1000px;
+            /* width: 100%; */
+            max-width: 690px;
             border-radius: 20px;
             transition: all 0.3s ease;
         }
@@ -485,7 +510,7 @@
         }
 
         .notifications-header p {
-            font-size: 18px;
+            font-size: 25px;
             line-height: 1.7;
             color: #555;
         }
@@ -493,7 +518,7 @@
         .push-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
+            gap: 70px;
         }
 
         .push-card {
@@ -546,6 +571,7 @@
         }
 
         .case-text {
+            margin-top: 50px;
             flex: 1;
             min-width: 350px;
             max-width: 500px;
@@ -561,7 +587,7 @@
         }
 
         .case-text p {
-            font-size: 16px;
+            font-size: 26px;
             margin: 8px 0;
             color: #ccc;
         }
@@ -577,7 +603,7 @@
 
         .case-right img {
             width: 100%;
-            border-radius: 12px;
+            /* border-radius: 12px; */
             transition: all 0.3s ease;
         }
 
@@ -621,6 +647,7 @@
         }
 
         .dashboard-left li {
+            font-size: 25px;
             margin-bottom: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -648,7 +675,7 @@
 
         /* CLIMATE SECTION */
         .climate-section {
-            background-image: url('assets/takashi-miyazaki-AeYaWjfJ4rU-unsplash (1).jpg');
+            background-image: url('assets/vertical-shot-foret-de-soignes-belgium-brussels-with-sun-shining-through-branches.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -884,7 +911,7 @@
             <h1>The simplest<br> rewards program<br> for local businesses</h1>
             <p>2X return rates and 30% more revenue with our digital reward cards.</p>
             <div class="buttons">
-                <a href="tel:+923059444111" class="signup">Sign up free</a>
+                <a href="tel:+923059444111" class="signup">Sign up</a>
                 <a href="tel:+923059444111" class="demo">Book a demo</a>
             </div>
             <div class="payments">
@@ -894,7 +921,8 @@
             </div>
         </div>
         <div class="right-hero">
-            <img src="assets/group11.png" alt="TTT Automation Dashboard" />
+            <img src="assets\Kite Phone png.png" class="phone1" alt="TTT Automation Dashboard" />
+            <img src="assets\Extraction-loyalty.png" class="phone2" alt="TTT Automation Dashboard" />
         </div>
     </div>
 
@@ -950,7 +978,8 @@
             <a href="#" class="scanner-button">Download App</a>
         </div>
         <div class="scanner-right">
-            <img src="assets/scanner app.JPG" alt="Scanner App Interface" />
+            <img src="assets/scanner app.JPG " alt="Scanner App Interface" />
+            <!-- <img src="Extraction\scanner phone.png " alt="Scanner App Interface" /> -->
         </div>
     </div>
 
@@ -1001,18 +1030,20 @@
             <p><strong>Niche:</strong> Coffee Shops</p>
             <p><strong>Venues:</strong> 2</p>
             <p><strong>Loyalty mechanic:</strong> Stamp Rewards</p>
-            <p><strong>Time:</strong> 3 Days</p>
+            <p><strong>Time:</strong> 29 Days</p>
             <br>
-            <p><strong>Members:</strong> 265+</p>
-            <p><strong>Transactions:</strong> 456</p>
-            <p><strong>Push delivered:</strong> 26</p>
+            <p><strong>Loyalty Members:</strong> 530+</p>
+            <p><strong>Transactions:</strong> 1445+</p>
+            <p><strong>Push delivered:</strong> 42+</p>
             <p><strong>Retention:</strong> 32% (2.9x)</p>
-            <p><strong>Revenue:</strong> PKR 277,966.389 (3.8x)</p>
+            <p><strong>Revenue:</strong> 4x plus from previous campaign</p>
             <br>
-            <p>They have already earned more than they invested!</p>
+            <p>They have already earned more than they invested within 3 days!</p>
         </div>
         <div class="case-right">
-            <img src="assets/extraction.jpeg" alt="Extraction Coffee Case Study" />
+            <img src="Extraction\extraction.png" alt="Extraction Coffee Case Study" />
+            <img src="Extraction\extaction 2.png" alt="Extraction Coffee Case Study" />
+            <img src="Extraction\extraction 3.png" alt="Extraction Coffee Case Study" />
         </div>
     </div>
 
@@ -1039,10 +1070,11 @@
     </div>
 
     <!-- CLIMATE -->
-    <div class="climate-section animate-on-scroll">
+    <div class="climate-section">
         <div class="climate-icon">🌱</div>
         <h1>Save the Planet!</h1>
-        <p>We aim at reducing carbon footprint and improving the planet's ecology.<br><br>Join a growing coalition of
+        <p>We aim at reducing carbon footprint and improving <br> the planet's ecology.<br><br>Join a growing coalition
+            of
             forward-thinking businesses changing the course of carbon removal.</p>
     </div>
 

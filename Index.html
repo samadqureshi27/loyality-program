@@ -24,7 +24,6 @@
 
         body {
             font-family: 'Meuemachina', sans-serif;
-            /* font-family: "Arial", sans-serif; */
             background-color: #000;
             color: #fff;
             overflow-x: hidden;
@@ -200,7 +199,6 @@
             margin: 0%;
             position: absolute;
             max-width: 100%;
-            /* height: auto; */
             transition: all 0.3s ease;
         }
 
@@ -212,13 +210,10 @@
         .phone2 {
             position: absolute;
             top: 40px;
-            /* push it down */
             left: 40px;
-            /* push it to the right */
             z-index: 1;
             opacity: 0.8;
             transform: scale(0.95);
-            /* optional shrink */
         }
 
         
@@ -237,7 +232,6 @@
             justify-content: center;
             align-items: center;
             padding: 30px 50px;
-            /* padding-left: 0%; */
             /* max-width: 1400px; */
             margin: auto;
             min-height: 80vh;
@@ -273,8 +267,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* optional: centers horizontally */
-            /* gap: 5px; space between buttons */
             animation: fadeInUp 1s ease-out 1.4s both;
         }
 
@@ -331,7 +323,6 @@
             height: 200px;
             margin-right: 15px;
             justify-content: left;
-            /* margin-top: 0%; */
             transition: all 0.3s ease;
         }
 
@@ -339,13 +330,13 @@
             position: relative;
             flex: 2;
             min-width: 50px;
-            /* max-width: 500px; */
+            /* max-width: 700px; */
             text-align: center;
             animation: fadeInRight 1s ease-out 1s both;
         }
 
         .right-hero img {
-            /* width: 100%; */
+            width: 100%;
             max-width: 790px;
             border-radius: 20px;
             animation: float 6s ease-in-out infinite;
@@ -603,7 +594,6 @@
 
         .case-right img {
             width: 100%;
-            /* border-radius: 12px; */
             transition: all 0.3s ease;
         }
 
@@ -667,6 +657,7 @@
             width: 100%;
             border-radius: 12px;
             transition: all 0.3s ease;
+            overflow-x: hidden;
         }
 
         .dashboard-right img:hover {
@@ -744,7 +735,7 @@
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: 100%;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -792,7 +783,7 @@
         }
 
         .footer-bottom {
-            max-width: 1400px;
+            max-width: 100%;
             margin: auto;
             text-align: center;
             padding-top: 30px;
@@ -855,7 +846,6 @@
             .payments img {
                 height: auto;
                 max-width: 100%;
-                /* ensures two images side-by-side */
                 margin-right: 0;
             }
 
@@ -889,6 +879,33 @@
                 gap: 30px;
             }
         }
+
+
+        @media screen and (max-width: 480px) {
+    .phone1,
+    .phone2 {
+        width: 100%;
+        margin: 0%;
+        position: absolute;
+        max-width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .phone1 {
+        position: relative;
+        z-index: 2;
+        left: -40px;
+    }
+
+    .phone2 {
+        position: absolute;
+        top: 40px;
+        left: -40px;
+        z-index: 1;
+        opacity: 0.8;
+        transform: scale(0.95);
+    }
+}
     </style>
 </head>
 
@@ -917,7 +934,6 @@
             <div class="payments">
 
                 <img src="logo\TTT Apple google.png" alt="Apple">
-                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google"> -->
             </div>
         </div>
         <div class="right-hero">
@@ -930,41 +946,41 @@
     <div class="card-types-container animate-on-scroll" id="card-types">
         <div class="card-types-left">
             <h1>Multiple Card Types</h1>
-            <p>Choose from many types: customizable logos, colors, icons, and text. Easy to set up and ready to perform.
+            <p>Choose from many types: customizable logos, colors, icons, and text.
             </p>
         </div>
         <div class="cards-grid">
             <div class="card"><img src="assets/77.png" alt="Stamps">
                 <div class="card-title">Stamps</div>
-                <div class="card-desc">Works on the mechanics: Buy 10 and get the 11th as a gift</div>
+                <div class="card-desc">Works on the mechanics: Buy 10 and get the 11th as a gift!</div>
             </div>
-            <div class="card"><img src="assets/22.png" alt="Cashback">
+            <div class="card"><img src="assets/44.png" alt="Cashback">
                 <div class="card-title">Cashback</div>
-                <div class="card-desc">Give and redeem customers points for purchases</div>
+                <div class="card-desc">Get cashback with every purchase!</div>
             </div>
             <div class="card"><img src="assets/66.png" alt="Reward">
                 <div class="card-title">Reward</div>
-                <div class="card-desc">Classic discount system with several earning levels.</div>
+                <div class="card-desc">Earn Exclusive rewards on every visit!</div>
             </div>
             <div class="card"><img src="assets/11 (1).png" alt="Membership">
                 <div class="card-title">Membership</div>
-                <div class="card-desc">Attract new customers with digital coupons.</div>
+                <div class="card-desc">Exclusive perks for our VIP's!</div>
             </div>
-            <div class="card"><img src="assets/44.png" alt="Discount">
+            <div class="card"><img src="assets/22.png" alt="Discount">
                 <div class="card-title">Discount</div>
-                <div class="card-desc">Classic discount system with several earning levels.</div>
+                <div class="card-desc">unlock bigger savings at every level!</div>
             </div>
             <div class="card"><img src="assets/33.png" alt="Coupon">
                 <div class="card-title">Coupon</div>
-                <div class="card-desc">Attract new customers with digital coupons.</div>
+                <div class="card-desc">Attract new customers with digital coupons!</div>
             </div>
             <div class="card"><img src="assets/90.png" alt="Multipass">
                 <div class="card-title">Multipass</div>
-                <div class="card-desc">Sell services in bulk to your customers</div>
+                <div class="card-desc">Sell services in bulk to your customers!</div>
             </div>
             <div class="card"><img src="assets/88.png" alt="Gift card">
                 <div class="card-title">Gift card</div>
-                <div class="card-desc">Sell prepaid gift cards to customers</div>
+                <div class="card-desc">Sell prepaid gift cards to customers!</div>
             </div>
         </div>
     </div>
@@ -979,7 +995,6 @@
         </div>
         <div class="scanner-right">
             <img src="assets/scanner app.JPG " alt="Scanner App Interface" />
-            <!-- <img src="Extraction\scanner phone.png " alt="Scanner App Interface" /> -->
         </div>
     </div>
 
@@ -1065,7 +1080,7 @@
             </ul>
         </div>
         <div class="dashboard-right">
-            <img src="assets/image.png" alt="Dashboard Analytics" />
+            <img src="assets\analytics.png" alt="Dashboard Analytics" />
         </div>
     </div>
 
@@ -1085,13 +1100,12 @@
                 <h3> <img src="logo\TTT-Logo.png" alt=""> </h3>
                 <p>The simplest rewards program for local businesses. Increase customer retention and boost revenue with
                     our digital loyalty cards platform.</p>
-                <!-- <p><i class="fas fa-map-marker-alt"></i> Lahore, Punjab, Pakistan</p> -->
-                <p><i class="fas fa-envelope"></i> info@tritechtechnology.com</p>
-                <p><i class="fas fa-phone"></i> +92 3059444111 </p>
+                <p><i class="fas fa-envelope"></i> loyalty@tritechtechnologyllc.com</p>
+                <p><i class="fas fa-phone"></i> +92 305 9444111 </p>
             </div>
 
             <div class="footer-section">
-                <h3>Products</h3>
+                <h3>Features</h3>
                 <ul>
                     <li><a href="#card-types">Digital Loyalty Cards</a></li>
                     <li><a href="#scanner">Scanner App</a></li>
@@ -1105,13 +1119,13 @@
             <div class="footer-section">
                 <h3>Card Types</h3>
                 <ul>
-                    <li><a href="#card-types">Stamp Cards</a></li>
-                    <li><a href="#card-types">Cashback Cards</a></li>
-                    <li><a href="#card-types">Reward Cards</a></li>
-                    <li><a href="#card-types">Membership Cards</a></li>
-                    <li><a href="#card-types">Discount Cards</a></li>
-                    <li><a href="#card-types">Gift Cards</a></li>
-                    <li><a href="#card-types">Muti Pass</a></li>
+                    <li><a href="#card-types">Stamp Card</a></li>
+                    <li><a href="#card-types">Cashback Card</a></li>
+                    <li><a href="#card-types">Reward Card</a></li>
+                    <li><a href="#card-types">Membership Card</a></li>
+                    <li><a href="#card-types">Discount Card</a></li>
+                    <li><a href="#card-types">Gift Card</a></li>
+                    <li><a href="#card-types">MutiPass card</a></li>
                 </ul>
             </div>
 
@@ -1131,7 +1145,7 @@
                     href="https://lc.tritechtechnologyllc.com/promo/gdpr/privacy-policy" style="color: #dadada;">Privacy
                     policy ↗</a>
                 | <a href="https://lc.tritechtechnologyllc.com/promo/gdpr/subscription-agreement"
-                    style="color: #dadada;">Subscription agreement ↗</a>
+                    style="color: #dadada;">Terms of Usage↗</a>
         </div>
     </footer>
 

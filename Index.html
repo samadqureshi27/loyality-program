@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>TTT Automation</title>
+    <title>TTT LOYALTY</title>
     <link rel="icon" type="image/png" href="logo\tritech-logo.png" />
     <style>
         * {
@@ -137,6 +137,7 @@
             font-weight: bold;
             letter-spacing: 2px;
             animation: fadeInLeft 1s ease-out 0.2s both;
+            
         }
 
         .nav-links {
@@ -265,8 +266,8 @@
 
         .buttons {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: left;
+            justify-content: left;
             animation: fadeInUp 1s ease-out 1.4s both;
         }
 
@@ -879,6 +880,65 @@
                 gap: 30px;
             }
         }
+        .logo-slider-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .logo-slider {
+            overflow: hidden;
+            background: #000000;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgb(0, 0, 0);
+            padding: 35px 0;
+            position: relative;
+            
+        }
+
+        .logo-track {
+            display: flex;
+            animation: scroll 0s linear infinite;
+            width: calc(200% + 40px);
+        }
+
+        .logo-item {
+            flex: 0 0 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
 
 
         @media screen and (max-width: 480px) {
@@ -913,13 +973,13 @@
 
     <!-- HEADER -->
     <div class="header">
-        <div class="logo"> <img src="logo\TTT-Logo.png" alt=""> </div>
+        <div class="logo"> <img src="logo\TTT-LOYALTY-LOGO-White-(1).png" alt=""> </div>
         <div class="nav-links">
             <a href="#card-types">Card types</a>
             <a href="#scanner">Scanner App</a>
             <a href="#push">Push Notifications</a>
         </div>
-        <a href="tel:+923059444111" class="signup-btn">Sign up now</a>
+        <a href="http://wa.me/+923059444111" class="signup-btn">Book a demo</a>
     </div>
 
     <!-- HERO -->
@@ -928,8 +988,8 @@
             <h1>The simplest<br> rewards program<br> for local businesses</h1>
             <p>2X return rates and 30% more revenue with our digital reward cards.</p>
             <div class="buttons">
-                <a href="tel:+923059444111" class="signup">Sign up</a>
-                <a href="tel:+923059444111" class="demo">Book a demo</a>
+                <a href="http://wa.me/+923059444111" class="signup">Book a demo</a>
+                <!-- <a href="http://wa.me/+923059444111" class="demo">Book a demo</a> -->
             </div>
             <div class="payments">
 
@@ -939,6 +999,49 @@
         <div class="right-hero">
             <img src="assets\Kite_Phone_png.png" class="phone1" alt="TTT Automation Dashboard" />
             <img src="assets\Extraction-loyalty.png" class="phone2" alt="TTT Automation Dashboard" />
+        </div>
+    </div>
+
+
+
+    <div class="logo-slider-container">
+        
+        <div class="logo-slider">
+            <div class="logo-track">
+                <!-- First set of logos -->
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/KITE-logo.png" alt="KITE Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/CAP-logo.png" alt="CAP Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy">
+                </div>
+                
+                <!-- Duplicate set for seamless loop -->
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/KITE-logo.png" alt="KITE Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/CAP-logo.png" alt="CAP Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -988,10 +1091,9 @@
     <!-- SCANNER APP -->
     <div class="scanner-container animate-on-scroll" id="scanner">
         <div class="scanner-left">
-            <h1>Scan Cards with Our Free App</h1>
+            <h1>Scan Cards with Our Free Web App</h1>
             <p>Install the scanner app for your sales team. No extra hardware required. Track customer stats and reward
                 statuses effortlessly.</p>
-            <a href="#" class="scanner-button">Download App</a>
         </div>
         <div class="scanner-right">
             <img src="assets/scanner_app.JPG " alt="Scanner App Interface" />
@@ -1097,7 +1199,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3> <img src="logo\TTT-Logo.png" alt=""> </h3>
+                <h3> <img src="logo\TTT-LOYALTY-LOGO-White-(1).png" alt=""> </h3>
                 <p>The simplest rewards program for local businesses. Increase customer retention and boost revenue with
                     our digital loyalty cards platform.</p>
                 <p><i class="fas fa-envelope"></i> loyalty@tritechtechnologyllc.com</p>
@@ -1141,7 +1243,7 @@
                 <a href="https://www.instagram.com/tttechnologyllc/profilecard/?igsh=MWJkM2xsc2ZscDE3Mg%3D%3D"
                     aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
             </div>
-            <p>&copy; 2025 TTT Automation. All rights reserved. | <a
+            <p>&copy; 2025 TRI TECH TECHNOLOGY. All rights reserved. | <a
                     href="https://lc.tritechtechnologyllc.com/promo/gdpr/privacy-policy" style="color: #dadada;">Privacy
                     policy ↗</a>
                 | <a href="https://lc.tritechtechnologyllc.com/promo/gdpr/subscription-agreement"

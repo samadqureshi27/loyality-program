@@ -649,27 +649,51 @@
         }
 
         .dashboard-right {
-            flex: 1;
-            min-width: 350px;
-        }
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+}
 
-        .dashboard-right img {
-            width: 100%;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            overflow-x: hidden;
-        }
+.dashboard-right img {
+    width: 100%;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
 
-        .dashboard-right img:hover {
-            transform: scale(1.02);
-        }
+.dashboard-right img.loaded {
+    opacity: 1;
+}
 
+.dashboard-right img:hover {
+    transform: scale(1.02);
+}
+
+.dashboard-right .image-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
         /* CLIMATE SECTION */
         .climate-section {
             background-image: url('assets/Trees.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* background-attachment: fixed; */
             color: white;
             padding: 100px 30px;
             text-align: center;
@@ -993,7 +1017,7 @@
 
 
 
-        
+
 
 
         @media screen and (max-width: 480px) {
@@ -1260,7 +1284,12 @@
             </ul>
         </div>
         <div class="dashboard-right">
-            <img src="assets\analytics.png" alt="Dashboard Analytics" />
+    <div class="image-skeleton"></div>
+    <img src="clients-logo/analytics.png" 
+         alt="Dashboard Analytics" 
+         loading="lazy" 
+         decoding="async"
+         onload="this.classList.add('loaded'); this.parentElement.querySelector('.image-skeleton').style.display='none';" />
         </div>
     </div>
 
@@ -1380,14 +1409,14 @@
         });
 
         // Parallax effect for climate section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const climateSection = document.querySelector('.climate-section');
-            if (climateSection) {
-                const rate = scrolled * -0.5;
-                climateSection.style.backgroundPosition = `center ${rate}px`;
-            }
-        });
+        // window.addEventListener('scroll', () => {
+        //     const scrolled = window.pageYOffset;
+        //     const climateSection = document.querySelector('.climate-section');
+        //     if (climateSection) {
+        //         const rate = scrolled * -0.5;
+        //         climateSection.style.backgroundPosition = `center ${rate}px`;
+        //     }
+        // });
 
         // Add hover effect to dashboard list items
         document.querySelectorAll('.dashboard-left li').forEach(item => {

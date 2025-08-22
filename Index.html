@@ -17,7 +17,7 @@
 
         @font-face {
             font-family: 'Meuemachina';
-            src: url('Font\NeueMachina-Light.woff2') format('woff2');
+            src: url('Font/NeueMachina-Light.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
         }
@@ -137,7 +137,6 @@
             font-weight: bold;
             letter-spacing: 2px;
             animation: fadeInLeft 1s ease-out 0.2s both;
-            
         }
 
         .nav-links {
@@ -667,7 +666,7 @@
 
         /* CLIMATE SECTION */
         .climate-section {
-            background-image: url('assets/trees.jpg');
+            background-image: url('assets/Trees.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -880,6 +879,7 @@
                 gap: 30px;
             }
         }
+        
         .logo-slider-container {
             width: 100%;
             margin: 0;
@@ -906,7 +906,7 @@
 
         .logo-track {
             display: flex;
-            animation: scroll 0s linear infinite;
+            animation: scroll 30s linear infinite;
             width: calc(200% + 40px);
         }
 
@@ -938,6 +938,31 @@
                 transform: translateX(-50%);
             }
         }
+                /* Default speed for larger screens */
+.logo-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content; /* Allow full width for all logos */
+}
+
+/* Make it faster on tablets */
+/* Make it faster on mobile */
+@media screen and (max-width: 768px) {
+    .logo-track {
+        animation: scroll 15s linear infinite; /* 2x faster */
+    }
+    .logo-track img {
+        max-width: 80px; /* Adjust logo size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-track img {
+        
+        max-width: 90px; /* Slightly smaller logos on phones */
+    }
+}
+     
         
 
 
@@ -973,13 +998,13 @@
 
     <!-- HEADER -->
     <div class="header">
-        <div class="logo"> <img src="logo\TTT-LOYALTY-LOGO-White-(1).png" alt=""> </div>
+        <div class="logo"> <img src="logo\TTT-LOYALTY-LOGO-White (2).png" alt=""> </div>
         <div class="nav-links">
             <a href="#card-types">Card types</a>
             <a href="#scanner">Scanner App</a>
             <a href="#push">Push Notifications</a>
         </div>
-        <a href="http://wa.me/+923059444111" class="signup-btn">Book a demo</a>
+        <a href="tel:+923059444111" class="signup-btn">Book a demo</a>
     </div>
 
     <!-- HERO -->
@@ -989,7 +1014,7 @@
             <p>2X return rates and 30% more revenue with our digital reward cards.</p>
             <div class="buttons">
                 <a href="http://wa.me/+923059444111" class="signup">Book a demo</a>
-                <!-- <a href="http://wa.me/+923059444111" class="demo">Book a demo</a> -->
+                <!--<a href="tel:+923059444111" class="demo">Book a demo</a>-->
             </div>
             <div class="payments">
 
@@ -1001,9 +1026,8 @@
             <img src="assets\Extraction-loyalty.png" class="phone2" alt="TTT Automation Dashboard" />
         </div>
     </div>
-
-
-
+    
+    
     <div class="logo-slider-container">
         
         <div class="logo-slider">
@@ -1024,6 +1048,15 @@
                 <div class="logo-item">
                     <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy">
                 </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/NoFilter-logo.PNG" alt="NoFilter Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/Wejump-logo.png" alt="Wejump Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/weplay-logo.png" alt="Weplay Logo" loading="lazy">
+                </div>
                 
                 <!-- Duplicate set for seamless loop -->
                 <div class="logo-item">
@@ -1040,6 +1073,15 @@
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/NoFilter-logo.PNG" alt="NoFilter Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/Wejump-logo.png" alt="Wejump Logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img src="clients-logo/Clients/weplay-logo.png" alt="Weplay Logo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1094,6 +1136,7 @@
             <h1>Scan Cards with Our Free Web App</h1>
             <p>Install the scanner app for your sales team. No extra hardware required. Track customer stats and reward
                 statuses effortlessly.</p>
+
         </div>
         <div class="scanner-right">
             <img src="assets/scanner_app.JPG " alt="Scanner App Interface" />
@@ -1199,10 +1242,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3> <img src="logo\TTT-LOYALTY-LOGO-White-(1).png" alt=""> </h3>
+                <h3> <img src="logo\TTT-LOYALTY-LOGO-White (2).png" alt=""> </h3>
                 <p>The simplest rewards program for local businesses. Increase customer retention and boost revenue with
                     our digital loyalty cards platform.</p>
-                <p><i class="fas fa-envelope"></i> loyalty@tritechtechnologyllc.com</p>
+                <p><i class="fas fa-envelope"></i> loyaltyCard@tritechtechnologyllc.com</p>
                 <p><i class="fas fa-phone"></i> +92 305 9444111 </p>
             </div>
 

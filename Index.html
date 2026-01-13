@@ -113,7 +113,7 @@
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transition: all 0.3s ease-out;
         }
 
         .animate-on-scroll.visible {
@@ -1172,48 +1172,35 @@
             margin-top: 10px;
         }
 
-        /* CASE STUDY SECTION - Scroll Stack Effect */
+        /* CASE STUDY SECTION - Scroll Stacking Effect */
         .case-section {
-            background: #000;
+            position: relative;
             height: 300vh;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Case study carousel container */
-        .case-carousel {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        /* Horizontal scrolling wrapper */
-        .case-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Individual case study slide */
         .case-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: sticky;
+            top: -300px;
+            height: 150vh;
             display: flex;
             flex-wrap: nowrap;
             gap: 60px;
             align-items: center;
             justify-content: center;
-            padding: 80px 50px;
+            padding: 300px 50px 300px 50px;
             box-sizing: border-box;
-            max-width: 1400px;
-            margin: 0 auto;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            background: #000;
+        }
+
+        .zerodegree-slide {
+            z-index: 1;
+        }
+
+        .steakaway-slide {
+            z-index: 2;
         }
 
         .case-text {
@@ -1266,59 +1253,23 @@
             box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
         }
 
-        /* Steakaway specific sizing - smaller images */
-        .steakaway-slide {
-            background: #000;
-            z-index: 2;
-            will-change: transform;
-        }
-
-        .steakaway-slide .case-right {
-            max-width: 550px;
-            min-width: 400px;
-        }
-
-        .steakaway-slide .case-right img {
-            max-width: 500px;
-        }
-
-        /* Zero Degree specific sizing - larger images */
-        .zerodegree-slide {
-            background: #000;
-            z-index: 1;
-        }
-
+        /* Both slides same sizing - matching Zero Degree */
+        .steakaway-slide .case-right,
         .zerodegree-slide .case-right {
             max-width: 800px;
             min-width: 550px;
         }
 
+        .steakaway-slide .case-right img,
         .zerodegree-slide .case-right img {
             max-width: 750px;
         }
 
-        /* Navigation dots for case studies */
-        .case-dots {
-            display: none;
+        /* Steakaway extra bottom padding */
+        .steakaway-slide {
+            padding-bottom: 600px;
         }
 
-        .case-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #444;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .case-dot.active {
-            background: #f1c40f;
-            transform: scale(1.3);
-        }
-
-        .case-dot:hover {
-            background: #888;
-        }
 
         /* DASHBOARD SECTION */
         .dashboard-section {
@@ -1607,22 +1558,48 @@
                 font-size: 18px;
             }
 
+            .case-section {
+                height: auto;
+                min-height: 200vh;
+            }
+
             .case-slide {
-                padding: 0 20px;
-                gap: 30px;
+                height: auto;
+                min-height: 100vh;
+                padding: 40px 20px;
+                gap: 20px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .case-text {
+                margin-top: 0;
+            }
+
+            .case-text h2 {
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+
+            .case-text p {
+                font-size: 12px;
+                margin: 3px 0;
+            }
+
+            .case-text br {
+                display: none;
             }
 
             .case-right {
                 min-width: 100%;
                 flex-direction: column;
+                gap: 8px;
             }
 
             .case-right img {
                 max-width: 100%;
-            }
-
-            .case-text {
-                margin-top: 0;
+                max-height: 150px;
+                object-fit: contain;
             }
         }
         
@@ -1945,68 +1922,54 @@
         </div>
     </div>
 
-    <!-- CASE STUDY - Horizontal Carousel -->
-    <div class="case-section animate-on-scroll">
-        <!-- Carousel container -->
-        <div class="case-carousel">
-            <!-- Wrapper for horizontal scrolling -->
-            <div class="case-wrapper">
-
-                <!-- Slide 1: Steakaway Case Study -->
-                <div class="case-slide steakaway-slide">
-                    <div class="case-text">
-                        <h2>Steakaway</h2>
-                        <br>
-                        <p><strong>Period:</strong> 90 Days</p>
-                        <p><strong>Total Customers:</strong> 5,234</p>
-                        <p><strong>Cards Installed:</strong> 4,187</p>
-                        <p><strong>Total Transactions:</strong> 15,892</p>
-                        <p><strong>Customer Rating:</strong> 4.2/5 Stars</p>
-                        <br>
-                        <p><strong>New Visits:</strong> 5,021</p>
-                        <p><strong>Repeat Visits:</strong> 2,456</p>
-                        <p><strong>Referrals:</strong> 28</p>
-                        <br>
-                        <p>Amazing ROI with significant growth in customer retention!</p>
-                    </div>
-                    <div class="case-right">
-                        <img src="steak away stats/IMG_1193.PNG" alt="Steakaway Case Study" />
-                        <img src="steak away stats/IMG_1195.PNG" alt="Steakaway Case Study" />
-                        <img src="steak away stats/IMG_1196.PNG" alt="Steakaway Case Study" />
-                    </div>
-                </div>
-
-                <!-- Slide 2: Zero Degree Case Study -->
-                <div class="case-slide zerodegree-slide">
-                    <div class="case-text">
-                        <h2>Zero Degree</h2>
-                        <br>
-                        <p><strong>Period:</strong> 65 Days</p>
-                        <p><strong>Total Customers:</strong> 4,428</p>
-                        <p><strong>Cards Installed:</strong> 3,477</p>
-                        <p><strong>Total Transactions:</strong> 13,568</p>
-                        <p><strong>Customer Rating:</strong> 3.5/5 Stars</p>
-                        <br>
-                        <p><strong>New Visits:</strong> 4,127</p>
-                        <p><strong>Repeat Visits:</strong> 1,967</p>
-                        <p><strong>Referrals:</strong> 15</p>
-                        <br>
-                        <p>They have already earned more than they invested within 3 days!</p>
-                    </div>
-                    <div class="case-right">
-                        <img src="zero-degree/Zero-stat-1.png" alt="Zero Degree Case Study" />
-                        <img src="zero-degree/Zero-stat-2.png" alt="Zero Degree Case Study" />
-                        <img src="zero-degree/Zero-stat-3.png" alt="Zero Degree Case Study" />
-                    </div>
-                </div>
-
+    <!-- CASE STUDY - Scroll Stacking Effect -->
+    <div class="case-section">
+        <!-- Zero Degree sticks first -->
+        <div class="case-slide zerodegree-slide">
+            <div class="case-text">
+                <h2>Zero Degree</h2>
+                <br>
+                <p><strong>Period:</strong> 65 Days</p>
+                <p><strong>Total Customers:</strong> 4,428</p>
+                <p><strong>Cards Installed:</strong> 3,477</p>
+                <p><strong>Total Transactions:</strong> 13,568</p>
+                <p><strong>Customer Rating:</strong> 3.5/5 Stars</p>
+                <br>
+                <p><strong>New Visits:</strong> 4,127</p>
+                <p><strong>Repeat Visits:</strong> 1,967</p>
+                <p><strong>Referrals:</strong> 15</p>
+                <br>
+                <p>They have already earned more than they invested within 3 days!</p>
+            </div>
+            <div class="case-right">
+                <img src="zero-degree/Zero-stat-1.png" alt="Zero Degree Case Study" />
+                <img src="zero-degree/Zero-stat-2.png" alt="Zero Degree Case Study" />
+                <img src="zero-degree/Zero-stat-3.png" alt="Zero Degree Case Study" />
             </div>
         </div>
 
-        <!-- Navigation dots -->
-        <div class="case-dots">
-            <span class="case-dot active" data-slide="0"></span>
-            <span class="case-dot" data-slide="1"></span>
+        <!-- Steakaway slides up and covers Zero Degree -->
+        <div class="case-slide steakaway-slide">
+            <div class="case-text">
+                <h2>Steakaway</h2>
+                <br>
+                <p><strong>Period:</strong> 90 Days</p>
+                <p><strong>Total Customers:</strong> 5,234</p>
+                <p><strong>Cards Installed:</strong> 4,187</p>
+                <p><strong>Total Transactions:</strong> 15,892</p>
+                <p><strong>Customer Rating:</strong> 4.2/5 Stars</p>
+                <br>
+                <p><strong>New Visits:</strong> 5,021</p>
+                <p><strong>Repeat Visits:</strong> 2,456</p>
+                <p><strong>Referrals:</strong> 28</p>
+                <br>
+                <p>Amazing ROI with significant growth in customer retention!</p>
+            </div>
+            <div class="case-right">
+                <img src="steak away stats/IMG_1193.PNG" alt="Steakaway Case Study" />
+                <img src="steak away stats/IMG_1195.PNG" alt="Steakaway Case Study" />
+                <img src="steak away stats/IMG_1196.PNG" alt="Steakaway Case Study" />
+            </div>
         </div>
     </div>
 
@@ -2374,56 +2337,7 @@
             card.style.transform = 'translateY(30px)';
         });
 
-        // ========================================
-        // CASE STUDY SECTION - Scroll Stack Effect
-        // ========================================
-
-        const caseSection = document.querySelector('.case-section');
-        const steakawaySlide = document.querySelector('.steakaway-slide');
-
-        if (caseSection && steakawaySlide) {
-            // Initially position Steakaway below the viewport
-            steakawaySlide.style.transform = 'translateX(-50%) translateY(100%)';
-
-            window.addEventListener('scroll', () => {
-                const sectionRect = caseSection.getBoundingClientRect();
-                const sectionTop = sectionRect.top;
-                const windowHeight = window.innerHeight;
-
-                // Calculate scroll progress through the section
-                // When section top reaches top of viewport: progress starts
-                // Total scroll distance = 300vh (section height)
-
-                // scrollProgress ranges from 0 to 3
-                // 0 = section just reached top of screen
-                // 1 = scrolled 100vh into section (Zero Degree fully visible)
-                // 2 = scrolled 200vh into section (Steakaway slides up)
-                // 3 = scrolled 300vh into section (Steakaway fully visible, then unlock)
-
-                const scrollProgress = Math.max(0, -sectionTop / windowHeight);
-
-                let translateY;
-
-                if (scrollProgress <= 1) {
-                    // Phase 1: Zero Degree is showing, Steakaway stays below
-                    translateY = 100;
-                } else if (scrollProgress <= 2) {
-                    // Phase 2: Steakaway slides up to cover Zero Degree
-                    const slideProgress = scrollProgress - 1; // 0 to 1
-                    translateY = 100 - (slideProgress * 100); // 100% to 0%
-                } else {
-                    // Phase 3: Steakaway fully visible
-                    translateY = 0;
-                }
-
-                // Apply smooth transform
-                steakawaySlide.style.transform = `translateX(-50%) translateY(${translateY}%)`;
-            });
-        }
-
-        // ========================================
-        // END CASE STUDY SECTION
-        // ========================================
+        // No JavaScript needed - CSS sticky positioning handles the scroll stacking effect
 
         // Parallax effect for climate section
         // window.addEventListener('scroll', () => {

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://loyalty.tritechtechnologyllc.com/">
 <meta property="og:title" content="TTT LOYALTY - Digital Rewards Program">
@@ -1533,7 +1534,6 @@
             .card-types-container,
             .scanner-container,
             .notifications-section,
-            .case-section,
             .dashboard-section {
                 width: 100%;
                 overflow-x: hidden;
@@ -1549,41 +1549,68 @@
                 gap: 30px;
             }
 
-            /* Case study carousel responsive adjustments */
-            .case-text h2 {
-                font-size: 35px;
-            }
-
-            .case-text p {
-                font-size: 18px;
-            }
-
+            /* Case study - clean cards on mobile */
             .case-section {
-                height: auto;
-                min-height: 200vh;
+                height: auto !important;
+                min-height: auto !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding: 20px 16px !important;
             }
 
             .case-slide {
-                height: auto;
-                min-height: 100vh;
-                padding: 40px 20px;
-                gap: 20px;
-                flex-direction: column;
-                justify-content: center;
+                position: relative !important;
+                top: auto !important;
+                height: auto !important;
+                min-height: auto !important;
+                min-width: 85vw;
+                max-width: 85vw;
+                padding: 28px 24px !important;
+                gap: 0;
+                flex-direction: column !important;
+                justify-content: flex-start;
+                align-items: stretch;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+                border-radius: 16px;
+                background: #111 !important;
+                border: 1px solid #222;
+            }
+
+            .zerodegree-slide,
+            .steakaway-slide {
+                z-index: auto !important;
+                padding-bottom: 28px !important;
             }
 
             .case-text {
                 margin-top: 0;
+                min-width: auto;
+                max-width: 100%;
             }
 
             .case-text h2 {
-                font-size: 28px;
-                margin-bottom: 5px;
+                font-size: 24px;
+                margin-bottom: 12px;
+                -webkit-text-fill-color: #f1c40f !important;
             }
 
             .case-text p {
-                font-size: 12px;
-                margin: 3px 0;
+                font-size: 14px;
+                margin: 4px 0;
+                line-height: 1.5;
+            }
+
+            .case-text p:last-child {
+                margin-top: 12px;
+                font-style: italic;
+                color: #f1c40f;
             }
 
             .case-text br {
@@ -1591,15 +1618,36 @@
             }
 
             .case-right {
-                min-width: 100%;
-                flex-direction: column;
-                gap: 8px;
+                display: flex !important;
+                flex-direction: row !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto;
+                gap: 10px;
+                -webkit-overflow-scrolling: touch;
+                padding: 12px 0 4px;
+            }
+
+            .steakaway-slide .case-right,
+            .zerodegree-slide .case-right {
+                min-width: 100% !important;
+                max-width: 100% !important;
             }
 
             .case-right img {
-                max-width: 100%;
-                max-height: 150px;
+                min-width: 75% !important;
+                max-width: 75% !important;
+                height: auto;
+                max-height: 200px;
                 object-fit: contain;
+                flex-shrink: 0;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+            }
+
+            .steakaway-slide .case-right img,
+            .zerodegree-slide .case-right img {
+                max-width: 75% !important;
             }
         }
         

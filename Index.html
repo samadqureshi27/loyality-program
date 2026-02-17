@@ -640,11 +640,13 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
-            grid-template-rows: auto auto;
+            align-items: start;
         }
 
         .faq-column {
-            display: contents;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .faq-section {
@@ -863,14 +865,14 @@
 
         .left-hero {
             flex: 1;
-            min-width: 350px;
+            min-width: 400px;
             /* max-width: 650px; */
             padding: 10px;
             animation: fadeInLeft 1s ease-out 0.8s both;
         }
 
         .left-hero h1 {
-            font-size: 57px;
+            font-size: 50px;
             font-weight: 400;
             margin-bottom: 30px;
             line-height: 1.2;
@@ -1739,6 +1741,49 @@
                 animation-duration: 60s;
             }
         }
+
+        .trusted-heading {
+            text-align: center;
+            padding: 40px 0 0;
+            background: #000;
+        }
+
+        .trusted-heading h2 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            background: #000;
+            padding: 20px 30px 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: #fff;
+        }
+
+        .stat-number {
+            font-size: 22px;
+            font-weight: 400;
+            color: #fff;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #ccc;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
      
         
 
@@ -1787,8 +1832,9 @@
     <!-- HERO -->
     <div class="hero-container">
         <div class="left-hero">
-            <h1>The simplest<br> rewards program<br> for local businesses</h1>
-            <p>Get a 2x increase in return rates and a 30% increase in revenue with our digital loyalty cards.</p>
+            <h1>Turn One-Time Customers<br> Into High-Spend Regulars,<br> ROI in 2-3 Weeks.</h1>
+            <p>Digital loyalty cards that live in Apple & Google Wallet.
+No app downloads. No friction. Just more repeat business.</p>
             <div class="buttons">
                 <a href="http://wa.me/+923059444111" class="signup">Book a demo</a>
                 <!--<a href="tel:+923059444111" class="demo">Book a demo</a>-->
@@ -1805,6 +1851,10 @@
     </div>
     
     
+    <div class="trusted-heading">
+        <h2>Trusted by 9+ Brands</h2>
+    </div>
+
 <div class="logo-slider-container">
         <div class="logo-slider">
             <div class="logo-track">
@@ -1872,6 +1922,21 @@
                     <img src="clients-logo/Clients/Steakaway-logo" alt="Steakaway Logo" loading="lazy" decoding="async">
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">50,000+</span>
+            <span class="stat-label">Loyalty Cards Issued</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">6 Months</span>
+            <span class="stat-label">Live</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client Satisfaction</span>
         </div>
     </div>
 
@@ -2107,18 +2172,78 @@
         <div class="faq-main-grid">
             <!-- Left Column -->
             <div class="faq-column">
-                <!-- General Questions -->
+                <!-- Common Questions -->
                 <div class="faq-section">
-                    <h2 class="section-title">General Questions</h2>
+                    <h2 class="section-title">Common Questions (We've Heard Them All)</h2>
                     <div class="faq-list">
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h3>Do my customers need to download a new app to use the loyalty card?</h3>
+                                <h3>Will my customers actually use digital cards?</h3>
                                 <span class="faq-toggle">+</span>
                             </div>
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
-                                    <p>No! Our digital loyalty cards live directly in the Apple Wallet or Google Pay apps that are already pre-installed on almost every smartphone. This removes the friction of downloading a new app and ensures your customers are always ready to earn rewards.</p>
+                                    <p>Yes. No app download = 8x faster adoption. Your card appears in the same place as Starbucks and McDonald's. Extraction Coffee went from 65 cards to 200+ in 30 days. Zero friction.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Isn't PKR 45K/month expensive?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Not when your break-even is Week 2-3. By Month 2, you're running a loyalty system for free. Most clients see PKR 180K+ extra revenue in Month 1 alone.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Do I need a fancy POS system?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Nope. Our PWA scanner app works on any smartphone. 10-second training. No hardware needed. (TTT POS launching soon for full integration.)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I change my loyalty mechanics later?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Yes. Change anytime. No developer fees. No waiting. Changes update instantly on all customer cards.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What if my POS doesn't integrate?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Our scanner app works standalone. Takes 10 seconds to award points manually.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How long does onboarding take?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>4 weeks from first call to going live. We handle: card design, portal setup, staff training, day-1 support.</p>
                                 </div>
                             </div>
                         </div>
@@ -2134,21 +2259,43 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
+                <!-- Privacy & Security -->
+                <div class="faq-section">
+                    <h2 class="section-title">Privacy & Security</h2>
+                    <div class="faq-list">
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h3>Is there any specialized hardware required?</h3>
+                                <h3>Is my customer data safe?</h3>
                                 <span class="faq-toggle">+</span>
                             </div>
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
-                                    <p>Not at all. You can use our free Scanner Web App on any existing smartphone, tablet, or laptop to scan customer cards and issue rewards. No expensive proprietary hardware is needed.</p>
+                                    <p>We take data privacy seriously. All customer information is encrypted and stored securely. We comply with standard data protection regulations to ensure that both your business and your customers are protected.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What if a customer switches to a new phone?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Because the cards are synced with Apple and Google accounts, their loyalty card and earned points will automatically transfer to their new device when they sign in.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Right Column -->
+            <div class="faq-column">
                 <!-- Features & Automation -->
                 <div class="faq-section">
                     <h2 class="section-title">Features & Automation</h2>
@@ -2190,10 +2337,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column -->
-            <div class="faq-column">
                 <!-- Business & Integration -->
                 <div class="faq-section">
                     <h2 class="section-title">Business & Integration</h2>
@@ -2230,36 +2374,6 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p>Yes. Our platform is built to scale. You can manage multiple branches from a single dashboard and see which locations are performing best.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Privacy & Security -->
-                <div class="faq-section">
-                    <h2 class="section-title">Privacy & Security</h2>
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>Is my customer data safe?</h3>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <div class="faq-answer-inner">
-                                    <p>We take data privacy seriously. All customer information is encrypted and stored securely. We comply with standard data protection regulations to ensure that both your business and your customers are protected.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>What if a customer switches to a new phone?</h3>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <div class="faq-answer-inner">
-                                    <p>Because the cards are synced with Apple and Google accounts, their loyalty card and earned points will automatically transfer to their new device when they sign in.</p>
                                 </div>
                             </div>
                         </div>

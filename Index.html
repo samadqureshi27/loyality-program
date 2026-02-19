@@ -108,14 +108,8 @@
         }
 
         .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.3s ease-out;
-        }
-
-        .animate-on-scroll.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
         /* HEADER */
@@ -1212,27 +1206,35 @@
             margin-top: 10px;
         }
 
-        /* CASE STUDY SECTION - Scroll Stacking Effect */
+        /* CASE STUDY SECTION */
         .case-section {
             position: relative;
-            height: 300vh;
+        }
+
+        /* Each wrapper is tall — gives scroll room for image cycling */
+        .case-wrapper {
+            position: relative;
+            height: 400vh;
+        }
+
+        /* Steakaway rises over Zero Degree during its freeze phase */
+        .steakaway-wrapper {
+            margin-top: -100vh;
         }
 
         .case-slide {
             position: sticky;
-            top: -300px;
-            height: 150vh;
+            top: 0;
+            height: 100vh;
             display: flex;
             flex-wrap: nowrap;
             gap: 60px;
             align-items: center;
-            justify-content: center;
-            padding: 300px 50px 300px 50px;
+            padding: 90px 50px 40px;
             box-sizing: border-box;
             width: 100%;
-            max-width: 100%;
-            margin: 0;
             background: #000;
+            overflow: hidden;
         }
 
         .zerodegree-slide {
@@ -1244,10 +1246,10 @@
         }
 
         .case-text {
-            margin-top: 50px;
-            flex: 1;
-            min-width: 350px;
-            max-width: 500px;
+            flex: 0 0 400px;
+            max-width: 400px;
+            min-width: 300px;
+            align-self: flex-start;
         }
 
         .case-text h2 {
@@ -1269,46 +1271,30 @@
             color: #fff;
         }
 
+        /* Image display area — one image shown at a time via JS */
         .case-right {
+            position: relative;
             flex: 1;
-            min-width: 500px;
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
+            height: calc(100vh - 130px);
+            overflow: hidden;
         }
 
         .case-right img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 680px;
-            height: auto;
-            transition: all 0.3s ease;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease;
             display: block;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .case-right img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
+        .case-right img.active {
+            opacity: 1;
         }
 
-        /* Both slides same sizing - matching Zero Degree */
-        .steakaway-slide .case-right,
-        .zerodegree-slide .case-right {
-            max-width: 800px;
-            min-width: 550px;
-        }
-
-        .steakaway-slide .case-right img,
-        .zerodegree-slide .case-right img {
-            max-width: 750px;
-        }
-
-        /* Steakaway extra bottom padding */
-        .steakaway-slide {
-            padding-bottom: 600px;
-        }
 
 
         /* DASHBOARD SECTION */
@@ -1418,6 +1404,11 @@
                 flex: 0 0 48% !important;
                 min-width: 0 !important;
                 max-width: 48% !important;
+            }
+
+            .phone2 {
+                left: 55px !important;
+                width: calc(100% - 55px) !important;
             }
         }
 
@@ -1655,35 +1646,28 @@
                 padding: 20px 16px !important;
             }
 
+            .case-wrapper {
+                height: auto !important;
+            }
+
             .case-slide {
                 position: relative !important;
                 top: auto !important;
                 height: auto !important;
-                min-height: auto !important;
-                min-width: 85vw;
-                max-width: 85vw;
-                padding: 28px 24px !important;
-                gap: 0;
                 flex-direction: column !important;
-                justify-content: flex-start;
-                align-items: stretch;
-                scroll-snap-align: center;
-                flex-shrink: 0;
-                border-radius: 16px;
-                background: #111 !important;
-                border: 1px solid #222;
+                padding: 40px 20px !important;
+                gap: 20px !important;
+                overflow: visible !important;
             }
 
-            .zerodegree-slide,
-            .steakaway-slide {
-                z-index: auto !important;
-                padding-bottom: 28px !important;
+            .steakaway-wrapper {
+                margin-top: 0 !important;
             }
 
             .case-text {
-                margin-top: 0;
-                min-width: auto;
-                max-width: 100%;
+                flex: none !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
             }
 
             .case-text h2 {
@@ -1698,47 +1682,29 @@
                 line-height: 1.5;
             }
 
-            .case-text p:last-child {
-                margin-top: 12px;
-                font-style: italic;
-                color: #f1c40f;
-            }
-
             .case-text br {
                 display: none;
             }
 
             .case-right {
+                position: relative !important;
+                height: auto !important;
                 display: flex !important;
                 flex-direction: row !important;
-                min-width: 100% !important;
-                max-width: 100% !important;
-                overflow-x: auto;
-                gap: 10px;
+                overflow-x: auto !important;
+                overflow-y: visible !important;
+                gap: 10px !important;
                 -webkit-overflow-scrolling: touch;
-                padding: 12px 0 4px;
-            }
-
-            .steakaway-slide .case-right,
-            .zerodegree-slide .case-right {
-                min-width: 100% !important;
-                max-width: 100% !important;
             }
 
             .case-right img {
-                min-width: 75% !important;
-                max-width: 75% !important;
-                height: auto;
-                max-height: 200px;
-                object-fit: contain;
-                flex-shrink: 0;
+                position: relative !important;
+                opacity: 1 !important;
+                width: auto !important;
+                height: 220px !important;
+                object-fit: contain !important;
+                flex-shrink: 0 !important;
                 border-radius: 10px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
-            }
-
-            .steakaway-slide .case-right img,
-            .zerodegree-slide .case-right img {
-                max-width: 75% !important;
             }
         }
         
@@ -2124,55 +2090,61 @@ No app downloads. No friction. Just more repeat business.</p>
         </div>
     </div>
 
-    <!-- CASE STUDY - Scroll Stacking Effect -->
+    <!-- CASE STUDY -->
     <div class="case-section">
-        <!-- Zero Degree sticks first -->
-        <div class="case-slide zerodegree-slide">
-            <div class="case-text">
-                <h2>Zero Degree</h2>
-                <br>
-                <p><strong>Period:</strong> 65 Days</p>
-                <p><strong>Total Customers:</strong> 4,428</p>
-                <p><strong>Cards Installed:</strong> 3,477</p>
-                <p><strong>Total Transactions:</strong> 13,568</p>
-                <p><strong>Customer Rating:</strong> 3.5/5 Stars</p>
-                <br>
-                <p><strong>New Visits:</strong> 4,127</p>
-                <p><strong>Repeat Visits:</strong> 1,967</p>
-                <p><strong>Referrals:</strong> 15</p>
-                <br>
-                <p>They have already earned more than they invested within 3 days!</p>
-            </div>
-            <div class="case-right">
-                <img src="zero-degree/Zero-stat-1.png" alt="Zero Degree Case Study" />
-                <img src="zero-degree/Zero-stat-2.png" alt="Zero Degree Case Study" />
-                <img src="zero-degree/Zero-stat-3.png" alt="Zero Degree Case Study" />
+
+        <!-- Zero Degree: 400vh wrapper, slide sticks at top -->
+        <div class="case-wrapper zerodegree-wrapper">
+            <div class="case-slide zerodegree-slide">
+                <div class="case-text">
+                    <h2>Zero Degree</h2>
+                    <br>
+                    <p><strong>Period:</strong> 65 Days</p>
+                    <p><strong>Total Customers:</strong> 4,428</p>
+                    <p><strong>Cards Installed:</strong> 3,477</p>
+                    <p><strong>Total Transactions:</strong> 13,568</p>
+                    <p><strong>Customer Rating:</strong> 3.5/5 Stars</p>
+                    <br>
+                    <p><strong>New Visits:</strong> 4,127</p>
+                    <p><strong>Repeat Visits:</strong> 1,967</p>
+                    <p><strong>Referrals:</strong> 15</p>
+                    <br>
+                    <p>They have already earned more than they invested within 3 days!</p>
+                </div>
+                <div class="case-right">
+                    <img src="zero-degree/Zero-stat-1.png" alt="Zero Degree Case Study" class="active" />
+                    <img src="zero-degree/Zero-stat-2.png" alt="Zero Degree Case Study" />
+                    <img src="zero-degree/Zero-stat-3.png" alt="Zero Degree Case Study" />
+                </div>
             </div>
         </div>
 
-        <!-- Steakaway slides up and covers Zero Degree -->
-        <div class="case-slide steakaway-slide">
-            <div class="case-text">
-                <h2>Steakaway</h2>
-                <br>
-                <p><strong>Period:</strong> 90 Days</p>
-                <p><strong>Total Customers:</strong> 5,234</p>
-                <p><strong>Cards Installed:</strong> 4,187</p>
-                <p><strong>Total Transactions:</strong> 15,892</p>
-                <p><strong>Customer Rating:</strong> 4.2/5 Stars</p>
-                <br>
-                <p><strong>New Visits:</strong> 5,021</p>
-                <p><strong>Repeat Visits:</strong> 2,456</p>
-                <p><strong>Referrals:</strong> 28</p>
-                <br>
-                <p>Amazing ROI with significant growth in customer retention!</p>
-            </div>
-            <div class="case-right">
-                <img src="steak away stats/IMG_1193.PNG" alt="Steakaway Case Study" />
-                <img src="steak away stats/IMG_1195.PNG" alt="Steakaway Case Study" />
-                <img src="steak away stats/IMG_1196.PNG" alt="Steakaway Case Study" />
+        <!-- Steakaway: rises over Zero Degree's freeze phase -->
+        <div class="case-wrapper steakaway-wrapper">
+            <div class="case-slide steakaway-slide">
+                <div class="case-text">
+                    <h2>Steakaway</h2>
+                    <br>
+                    <p><strong>Period:</strong> 90 Days</p>
+                    <p><strong>Total Customers:</strong> 5,234</p>
+                    <p><strong>Cards Installed:</strong> 4,187</p>
+                    <p><strong>Total Transactions:</strong> 15,892</p>
+                    <p><strong>Customer Rating:</strong> 4.2/5 Stars</p>
+                    <br>
+                    <p><strong>New Visits:</strong> 5,021</p>
+                    <p><strong>Repeat Visits:</strong> 2,456</p>
+                    <p><strong>Referrals:</strong> 28</p>
+                    <br>
+                    <p>Amazing ROI with significant growth in customer retention!</p>
+                </div>
+                <div class="case-right">
+                    <img src="steak away stats/IMG_1193.PNG" alt="Steakaway Case Study" class="active" />
+                    <img src="steak away stats/IMG_1195.PNG" alt="Steakaway Case Study" />
+                    <img src="steak away stats/IMG_1196.PNG" alt="Steakaway Case Study" />
+                </div>
             </div>
         </div>
+
     </div>
 
     <!-- DASHBOARD -->
@@ -2553,24 +2525,6 @@ No app downloads. No friction. Just more repeat business.</p>
             });
         });
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
 
         // Add staggered animation to cards
         document.querySelectorAll('.card').forEach((card, index) => {
@@ -2662,6 +2616,40 @@ No app downloads. No friction. Just more repeat business.</p>
                 this.style.borderLeft = 'none';
             });
         });
+
+        // Case study: cycle images as user scrolls through each wrapper
+        (function () {
+            if (window.innerWidth < 768) return;
+
+            document.querySelectorAll('.case-wrapper').forEach(function (wrapper) {
+                var images = wrapper.querySelectorAll('.case-right img');
+                if (!images.length) return;
+
+                // Show first image by default
+                images.forEach(function (img) { img.classList.remove('active'); });
+                images[0].classList.add('active');
+
+                window.addEventListener('scroll', function () {
+                    var rect = wrapper.getBoundingClientRect();
+                    var wrapperH = wrapper.offsetHeight;
+                    var scrollable = wrapperH - window.innerHeight;
+                    var scrolled = Math.max(0, -rect.top);
+
+                    // Clamp to scrollable range
+                    scrolled = Math.min(scrolled, scrollable);
+
+                    var progress = scrolled / scrollable; // 0 → 1
+                    var idx = Math.min(
+                        Math.floor(progress * images.length),
+                        images.length - 1
+                    );
+
+                    images.forEach(function (img, i) {
+                        img.classList.toggle('active', i === idx);
+                    });
+                }, { passive: true });
+            });
+        })();
 
         // Add loading animation
         window.addEventListener('load', () => {

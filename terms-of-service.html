@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service – TTT LOYALTY</title>
+    <link rel="icon" type="image/png" href="logo/tritech-logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+
+        @keyframes fadeInLeft   { from { opacity:0; transform:translateX(-30px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInUp     { from { opacity:0; transform:translateY(30px);  } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeInRight  { from { opacity:0; transform:translateX(30px);  } to { opacity:1; transform:translateX(0); } }
+        @keyframes slideInHeader{ from { transform:translateY(-100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
+
+        .header { position:sticky; top:0; background:#000000; backdrop-filter:blur(10px); padding:20px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; animation:slideInHeader 1s ease-out; transition:all 0.3s ease; }
+        .header:hover { background:#000000; }
+        .header .logo { animation:fadeInLeft 1s ease-out 0.2s both; }
+        .nav-links { display:flex; gap:30px; animation:fadeInUp 1s ease-out 0.4s both; }
+        .nav-links a { color:#fff; text-decoration:none; font-size:16px; transition:all 0.3s ease; position:relative; }
+        .nav-links a::after { content:''; position:absolute; width:0; height:2px; bottom:-5px; left:0; background:#f1c40f; transition:width 0.3s ease; }
+        .nav-links a:hover::after { width:100%; }
+        .nav-links a:hover { color:#f1c40f; transform:translateY(-2px); }
+        .signup-btn { background-color:#f1c40f; color:#000; padding:12px 22px; border-radius:6px; font-weight:lighter; font-size:15px; text-decoration:none; transition:all 0.3s ease; animation:fadeInRight 1s ease-out 0.6s both; }
+        .signup-btn:hover { background-color:#e1b00f; transform:translateY(-2px); box-shadow:0 5px 15px rgba(241,196,15,0.4); }
+
+        .page-hero { background:#000; border-bottom:1px solid #1a1a1a; padding:48px 0 40px; }
+        .page-hero-inner { max-width:860px; margin:0 auto; padding:0 50px; }
+        .page-hero .breadcrumb { font-size:13px; color:#666; display:flex; align-items:center; gap:8px; margin-bottom:18px; }
+        .page-hero .breadcrumb a { color:#666; text-decoration:none; transition:color 0.2s; }
+        .page-hero .breadcrumb a:hover { color:#f1c40f; }
+        .page-hero h1 { font-size:40px; font-weight:700; color:#fff; margin-bottom:10px; }
+        .page-hero .updated { font-size:14px; color:#666; }
+
+        .content-wrap { background:#000; color:#fff; }
+        .content-inner { max-width:860px; margin:0 auto; padding:64px 50px 100px; }
+
+        .intro-para { font-size:15.5px; line-height:1.8; color:#bbb; margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid #222; }
+
+        .section { margin-bottom:52px; scroll-margin-top:90px; }
+        .section h2 { font-size:22px; font-weight:700; color:#fff; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid #222; }
+        .section p { font-size:15.5px; line-height:1.8; color:#bbb; margin-bottom:16px; }
+        .section ul, .section ol { padding-left:22px; margin-bottom:16px; }
+        .section li { font-size:15.5px; line-height:1.8; color:#bbb; margin-bottom:8px; }
+        .section strong { color:#fff; font-weight:600; }
+        .section a { color:#f1c40f; font-weight:500; text-decoration:underline; text-underline-offset:3px; }
+        .section a:hover { color:#e1b00f; }
+
+        .contact-box { background:#111; border:1px solid #333; border-radius:10px; padding:26px 30px; margin-top:16px; }
+        .contact-box p { margin-bottom:6px; font-size:15.5px; color:#bbb; }
+        .contact-box p:first-child { font-weight:700; color:#fff; font-size:16px; margin-bottom:12px; }
+        .contact-box a { color:#f1c40f; }
+
+        .footer { background:#111; color:#fff; padding:60px 50px 30px; border-top:1px solid #333; }
+        .footer-content { max-width:100%; margin:auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; margin-bottom:40px; }
+        .footer-section h3 { font-size:20px; margin-bottom:30px; color:#ffffff; position:relative; }
+        .footer-section h3::after { content:''; position:absolute; bottom:-5px; left:0; width:30px; height:2px; background:#f1c40f; }
+        .footer-section p, .footer-section li { color:#ccc; line-height:1.6; margin-bottom:10px; }
+        .footer-section ul { list-style:none; }
+        .footer-section a { color:#ccc; text-decoration:none; transition:all 0.3s ease; }
+        .footer-section a:hover { color:#f1c40f; transform:translateX(5px); }
+        .footer-bottom { max-width:100%; margin:auto; text-align:center; padding-top:30px; border-top:1px solid #333; color:#888; }
+        .social-links { display:flex; justify-content:center; gap:20px; margin-bottom:20px; }
+        .social-links a { width:40px; height:40px; background:#333; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; transition:all 0.3s ease; text-decoration:none; }
+        .social-links a:hover { background:#f1c40f; color:#000; transform:translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .header { padding:15px 20px; flex-direction:column; gap:15px; }
+            .nav-links { flex-wrap:wrap; justify-content:center; gap:15px; }
+            .page-hero { padding:36px 24px 30px; }
+            .page-hero h1 { font-size:28px; }
+            .content-inner { padding:40px 24px 80px; }
+            .footer { padding:40px 20px 20px; }
+            .footer-content { grid-template-columns:1fr; gap:30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"><img src="logo/TTT-LOYALTY-LOGO-White (2).png" alt="TTT LOYALTY" style="height:36px;"></div>
+        <div class="nav-links">
+            <a href="/#card-types">Card types</a>
+            <a href="/#scanner">Scanner App</a>
+            <a href="/#push">Push Notifications</a>
+        </div>
+        <a href="https://wa.me/923059444111" class="signup-btn">Book a demo</a>
+    </div>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="/">Home</a><span>›</span><span>Legal</span><span>›</span><span>Terms of Service</span>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="updated">Last Updated: 23 May 2026</p>
+        </div>
+    </div>
+
+    <div class="content-wrap">
+        <div class="content-inner">
+
+            <p class="intro-para">These Terms of Service (the Terms) are a binding agreement between Tri Tech Technology, a software company operating as a registered partnership in Pakistan with its principal place of business at 30 Civic Center, Block D2, Lahore, Punjab, Pakistan 54000 (also referred to as TTT, provider, we, us, or our), and the business or individual registering for the Services (also referred to as the Subscriber, client, or you). By creating an account or accessing the Services, you agree to these Terms in full. If you are registering on behalf of a business, you confirm that you have authority to bind that entity. These Terms incorporate our Privacy Policy and Cookie Policy, which together form the complete agreement between the parties.</p>
+
+            <div class="section" id="definitions">
+                <h2>1. Definitions</h2>
+                <p><strong>Billing Period</strong> means the recurring monthly cycle for which Subscription Fees are charged in advance.</p>
+                <p><strong>Campaign</strong> means any loyalty programme, rewards scheme, or promotional activity created and managed by the Subscriber through the Platform.</p>
+                <p><strong>Customer</strong> means an end user of the Subscriber's loyalty programme who enrols in or redeems rewards through a Campaign.</p>
+                <p><strong>Dashboard</strong> means the web-based interface through which Subscribers manage their account, Campaigns, Customers, billing, and settings.</p>
+                <p><strong>Order</strong> means a subscription or registration confirmation specifying the Subscriber's selected Plan and applicable fees.</p>
+                <p><strong>Plan</strong> means the subscription tier selected by the Subscriber, which determines the features, limits, and fees that apply.</p>
+                <p><strong>Platform</strong> means the web-hosted SaaS application operated by Tri Tech Technology, including all associated APIs, interfaces, and documentation.</p>
+                <p><strong>Subscriber Content</strong> means all data, brand assets, programme configurations, Customer records, and other content uploaded or generated through the Services by the Subscriber.</p>
+                <p><strong>Subscription</strong> means the Subscriber's right to access and use the Services during the Subscription Term, subject to payment of applicable fees.</p>
+                <p><strong>Subscription Fees</strong> means the recurring charges payable in advance for access to the Services during each Billing Period.</p>
+                <p><strong>Subscription Term</strong> means the duration of the Subscriber's active Subscription, from account activation until termination.</p>
+                <p><strong>Trial</strong> means any free or reduced-fee period during which the Subscriber may access the Services before a paid Subscription begins.</p>
+                <p><strong>Users</strong> means the Subscriber and any individuals authorised by the Subscriber to access the Platform under its account.</p>
+            </div>
+
+            <div class="section" id="services">
+                <h2>2. The Services</h2>
+                <p>Tri Tech Technology provides a subscription-based SaaS loyalty and rewards platform that enables businesses to design, launch, and manage digital loyalty programmes and customer engagement campaigns. The features available to you depend on the Plan you have selected, as described on the Platform pricing page and in your Dashboard. The Platform also integrates with TTT POS, our proprietary point-of-sale software, allowing Subscribers to connect their in-store sales activity directly with their loyalty programme. This enables real-time points earning, reward redemption, and Customer data synchronisation at the point of sale. TTT may add, modify, or discontinue features at any time and will provide reasonable advance notice where a change materially reduces core functionality.</p>
+            </div>
+
+            <div class="section" id="eligibility">
+                <h2>3. Eligibility and Account Registration</h2>
+                <p>You must be at least 18 years of age to use the Services. You must provide accurate, complete, and up-to-date information when registering and keep that information current through the Dashboard or by contacting us. You are responsible for maintaining the security of your login credentials and must notify us immediately if you suspect any unauthorised access to your account. Providing false or fraudulent registration information is a material breach of these Terms and grounds for immediate termination.</p>
+            </div>
+
+            <div class="section" id="fees">
+                <h2>4. Plans, Fees, and Billing</h2>
+                <p>Subscriptions are billed monthly in advance and renew automatically at the end of each Billing Period at the then-current Plan price. By subscribing, you authorise TTT and Stripe to charge your payment method on file for each renewal without requiring further authorisation. All payments are processed by Stripe, Inc. and are subject to Stripe's terms of service.</p>
+                <p>You may cancel auto-renewal at any time through the Dashboard or by emailing <a href="mailto:info@tritechtechnologyllc.com">info@tritechtechnologyllc.com</a>. Cancellation takes effect at the end of the current Billing Period. You retain access until then and are not charged for any subsequent period. Fees already paid are non-refundable except where you cancel because of an uncured material breach by TTT, in which case we will refund the unused pro-rata portion of the current Billing Period.</p>
+                <p>Plan upgrades take effect immediately, with a pro-rata charge applied for the remainder of the current Billing Period. Plan downgrades take effect from the next renewal date. If a payment fails, we may retry the charge for up to 14 days, during which access to some features may be restricted. If payment remains outstanding after 14 days, we may suspend or terminate the account. TTT may adjust Subscription Fees with at least 30 days' written notice. If you do not accept the new pricing, you may cancel before it takes effect.</p>
+            </div>
+
+            <div class="section" id="usage">
+                <h2>5. Usage Limits, Fair Use, and API Access</h2>
+                <p>You must operate within the usage limits of your Plan, including limits on Users, Customers, Campaigns, and API requests. Where your Plan includes API access, you must use it in accordance with our published documentation, keep API keys secure, and not use it to circumvent Plan restrictions or overload shared infrastructure. TTT may throttle, restrict, or require a Plan upgrade where usage materially and consistently exceeds Plan limits or adversely affects other Subscribers.</p>
+            </div>
+
+            <div class="section" id="beta">
+                <h2>6. Beta and Early-Access Features</h2>
+                <p>TTT may make certain features available on a beta or early-access basis. These features are provided on an as-is basis without any warranty, may be modified or withdrawn at any time without notice, and are not covered by any uptime commitment. By using beta features, you accept all risk associated with their experimental nature.</p>
+            </div>
+
+            <div class="section" id="content">
+                <h2>7. Subscriber Content and Data</h2>
+                <p>You retain full ownership of all Subscriber Content. You grant TTT a limited licence to host, store, process, and display your content solely to the extent necessary to provide the Services. TTT will not use your content for any other purpose and will not use it to train or develop any Al or machine learning model. You are responsible for ensuring you have all necessary rights to upload your content and that it does not infringe any third-party rights.</p>
+                <p>Personal data relating to your Customers remains your data. You act as the data controller for that data and are responsible for ensuring a valid lawful basis exists for its collection and processing. TTT acts as a data processor on your instructions. Our Privacy Policy governs how we handle personal data in connection with the Services.</p>
+            </div>
+
+            <div class="section" id="ip">
+                <h2>8. Intellectual Property</h2>
+                <p>The Services, including the Platform software, design, documentation, and brand elements, are owned by TTT or its licensors. Subject to your compliance with these Terms and payment of fees, TTT grants you a non-exclusive, non-transferable right to access and use the Services during the Subscription Term for your internal business operations. You may not copy, modify, reverse engineer, resell, or use the Services to build a competing product. A strict legal action would be taken upon by the provider if found guilt.</p>
+            </div>
+
+            <div class="section" id="feedback">
+                <h2>9. Feedback</h2>
+                <p>If you share feedback, suggestions, or feature ideas with us, TTT may use them freely without restriction or compensation. Feedback is not treated as confidential unless agreed in writing.</p>
+            </div>
+
+            <div class="section" id="aup">
+                <h2>10. Acceptable Use Policy</h2>
+                <p>You must not use the Services in any way that violates applicable law, infringes third-party rights, or causes harm to TTT, other Subscribers, or their Customers. Prohibited conduct includes operating deceptive or unauthorised loyalty programmes, sending unsolicited marketing communications, uploading malicious code, scraping the Platform beyond what your Plan permits, and any activity that creates material legal or reputational risk for TTT.</p>
+            </div>
+
+            <div class="section" id="trust">
+                <h2>11. Trust and Safety</h2>
+                <p>TTT operates trust-and-safety controls to protect the integrity of the Platform and the safety of Subscribers and their Customers. We may require identity or business verification as a condition of account activation or access to certain features, and may apply account restrictions where a review identifies a risk. We maintain internal records of trust-and-safety events for audit and regulatory purposes. Where we impose a material restriction, we will inform you of the reason and any available steps to resolve it, to the extent we are able to do so.</p>
+            </div>
+
+            <div class="section" id="third-party">
+                <h2>12. Third-Party Services and Integrations</h2>
+                <p>The Platform integrates with third-party services including Stripe for payment processing, Intercom for in-app support, Google for reCAPTCHA and optional Single Sign-On, and mapping providers for business discovery features. Your use of these services is subject to each provider's own terms and policies. TTT is not responsible for the availability or performance of any third-party service and does not warrant that any specific integration will remain available or unchanged.</p>
+                <p>The Platform also integrates with TTT POS, TTT's own point-of-sale software. Where a Subscriber uses TTT POS alongside the Platform, transaction data, Customer records, and loyalty activity are synchronised between the two systems to enable a connected in-store and digital loyalty experience. Use of TTT POS is subject to its own separate terms of service.</p>
+            </div>
+
+            <div class="section" id="availability">
+                <h2>13. Platform Availability and Support</h2>
+                <p>TTT will use commercially reasonable efforts to keep the Services available, subject to scheduled maintenance, emergency fixes, and events outside our control. No contractual uptime guarantee is provided under standard Plans. Support is available through the in-app Intercom chat and by email to <a href="mailto:info@tritechtechnologyllc.com">info@tritechtechnologyllc.com</a>. We aim to acknowledge support requests within 2 business days. Resolution timelines vary by issue.</p>
+            </div>
+
+            <div class="section" id="data-protection">
+                <h2>14. Data Protection</h2>
+                <p>Where TTT processes personal data on your behalf in connection with the Services, it does so as a data processor acting under your instructions. You, as data controller, are responsible for ensuring a valid lawful basis exists for all personal data processing carried out through the Platform. Our Privacy Policy forms part of these Terms and governs our data handling practices.</p>
+            </div>
+
+            <div class="section" id="confidentiality">
+                <h2>15. Confidentiality</h2>
+                <p>Each party may receive non-public, proprietary information from the other in the course of their relationship. Each party agrees to hold the other's confidential information in strict confidence, use it only as needed to perform its obligations under these Terms, and not disclose it to third parties without prior written consent. These obligations survive termination for three years. Confidentiality does not apply to information that is publicly available, independently developed, or required to be disclosed by law.</p>
+            </div>
+
+            <div class="section" id="publicity">
+                <h2>16. Publicity</h2>
+                <p>TTT may refer to you as a customer and use your business name and logo in marketing materials and case studies. You may withdraw this permission at any time by writing to <a href="mailto:info@tritechtechnologyllc.com">info@tritechtechnologyllc.com</a> and we will cease use of your branding in new materials within a reasonable period.</p>
+            </div>
+
+            <div class="section" id="compliance">
+                <h2>17. Ethical and Regulatory Compliance</h2>
+                <p>Both parties agree to comply with all applicable anti-bribery, anti-corruption, and anti-money laundering laws in their respective jurisdictions, including applicable Pakistani legislation. You represent that you and your Users are not subject to any applicable sanctions regime or trade embargo restrictions.</p>
+            </div>
+
+            <div class="section" id="termination">
+                <h2>18. Term, Suspension, and Termination</h2>
+                <p>These Terms take effect when you first accept them and remain in force for the duration of the Subscription Term. Either party may terminate for cause with 30 days' written notice if the other commits a material breach that remains uncured, becomes insolvent, or ceases to carry on business. TTT may suspend your access immediately where fees are unpaid beyond 14 days, where you are in material breach of the Acceptable Use Policy, where required by law, or where necessary to protect the security and integrity of the Platform. On termination, your access ends immediately, you may request a data export within 30 days (subject to outstanding fees being paid), and all accrued payment obligations remain due.</p>
+            </div>
+
+            <div class="section" id="warranties">
+                <h2>19. Disclaimer of Warranties</h2>
+                <p>The Services are provided on an as-is and as-available basis without any warranty of any kind. TTT does not warrant that the Services will be uninterrupted, error-free, or free from security vulnerabilities. You are responsible for determining whether the Services are suitable for your business needs before subscribing.</p>
+            </div>
+
+            <div class="section" id="liability">
+                <h2>20. Limitation of Liability</h2>
+                <p>Neither party is liable to the other for indirect, incidental, consequential, or punitive damages, including loss of profits, revenue, data, or business opportunity. Each party's total liability in any 12-month period is capped at the greater of PKR 150,000 or the total Subscription Fees paid by the Subscriber in the 12 months preceding the claim. These limits do not apply to fraud, death or personal injury caused by negligence, the Subscriber's obligation to pay fees, or either party's indemnification obligations.</p>
+            </div>
+
+            <div class="section" id="indemnification">
+                <h2>21. Indemnification</h2>
+                <p>You agree to indemnify and hold TTT harmless from any third-party claims arising from your Subscriber Content, your breach of the Acceptable Use Policy, your failure to obtain valid consents for Customer data processing, or your violation of applicable law. TTT will indemnify you from third-party claims that your authorised use of the Services infringes a registered intellectual property right, except where the claim arises from your content or unauthorised modifications. The party seeking indemnification must promptly notify the indemnifying party and cooperate reasonably in the defence of the claim.</p>
+            </div>
+
+            <div class="section" id="force">
+                <h2>22. Force Majeure</h2>
+                <p>Neither party is in breach of these Terms for any failure or delay caused by circumstances beyond its reasonable control, including natural disasters, war, government action, power or internet outages, or failures of third-party infrastructure providers. This does not apply to the Subscriber's obligation to pay fees. The affected party must notify the other promptly and use reasonable efforts to resume performance.</p>
+            </div>
+
+            <div class="section" id="changes">
+                <h2>23. Changes to These Terms</h2>
+                <p>TTT may update these Terms from time to time. For material changes, meaning those that substantively affect your rights or obligations, we will give at least 30 days' written notice by email and in-app announcement. Non-material changes take effect on publication. If you do not accept a material change, you may cancel before it takes effect. Continued use of the Services after the effective date of any change constitutes acceptance of the updated Terms.</p>
+            </div>
+
+            <div class="section" id="governing">
+                <h2>24. Governing Law and Jurisdiction</h2>
+                <p>These Terms are governed by the laws of the Islamic Republic of Pakistan. Any dispute arising under these Terms is subject to the exclusive jurisdiction of the courts of Lahore, Punjab, Pakistan, except that either party may seek urgent injunctive relief in any court of competent jurisdiction.</p>
+            </div>
+
+            <div class="section" id="disputes">
+                <h2>25. Dispute Resolution</h2>
+                <p>Before starting formal legal proceedings, both parties agree to attempt to resolve any dispute through good-faith negotiation. The party raising the dispute must send a written notice describing the issue and the outcome sought. Both parties will engage in negotiations within 30 days of that notice. If no resolution is reached, either party may pursue its remedies before the courts of Lahore as set out in clause 24. Nothing in this clause prevents either party from seeking urgent injunctive relief at any time.</p>
+            </div>
+
+            <div class="section" id="assignment">
+                <h2>26. Assignment</h2>
+                <p>You may not assign or transfer these Terms without TTT's prior written consent. TTT may assign these Terms to an affiliate or in connection with a merger, acquisition, or sale of its business, with written notice to you.</p>
+            </div>
+
+            <div class="section" id="notices">
+                <h2>27. Notices</h2>
+                <p>Formal notices to TTT must be sent by email to <a href="mailto:legal@tritechtechnologyllc.com">legal@tritechtechnologyllc.com</a>. Notices to you will be sent to your registered account email address or delivered by in-app announcement. Email notices are deemed received on the next business day after sending.</p>
+            </div>
+
+            <div class="section" id="entire">
+                <h2>28. Entire Agreement, Severability, and Waiver</h2>
+                <p>These Terms, together with our Privacy Policy, Cookie Policy, and any written Order, form the entire agreement between the parties and supersede all prior agreements on the same subject. If any provision is found to be invalid or unenforceable, it will be modified to the minimum extent necessary and the remaining provisions will continue in full force. A failure to enforce any right under these Terms does not waive that right on any future occasion. These Terms do not confer any rights on third parties.</p>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>29. Contact</h2>
+                <p>For any questions about these Terms, please contact us.</p>
+                <div class="contact-box">
+                    <p>Tri Tech Technology</p>
+                    <p>30 Civic Center, Block D2, Lahore, Punjab, Pakistan 54000</p>
+                    <p>Email: <a href="mailto:info@tritechtechnologyllc.com">info@tritechtechnologyllc.com</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><img src="logo/TTT-LOYALTY-LOGO-White (2).png" alt="" style="height:36px;"></h3>
+                <p>The simplest rewards program for local businesses. Increase customer retention and boost revenue with our digital loyalty cards platform.</p>
+                <p><i class="fas fa-envelope"></i> loyaltyCard@tritechtechnologyllc.com</p>
+                <p><i class="fas fa-phone"></i> +92 305 9444111</p>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="/#card-types">Digital Loyalty Cards</a></li>
+                    <li><a href="/#scanner">Scanner App</a></li>
+                    <li><a href="/#push">Push Notifications</a></li>
+                    <li><a href="/#automations">Automations</a></li>
+                    <li><a href="/">Analytics Dashboard</a></li>
+                    <li><a href="/">API Integration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Card Types</h3>
+                <ul>
+                    <li><a href="/#card-types">Stamp Card</a></li>
+                    <li><a href="/#card-types">Cashback Card</a></li>
+                    <li><a href="/#card-types">Reward Card</a></li>
+                    <li><a href="/#card-types">Membership Card</a></li>
+                    <li><a href="/#card-types">Discount Card</a></li>
+                    <li><a href="/#card-types">Gift Card</a></li>
+                    <li><a href="/#card-types">MutiPass card</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://www.Facebook.com/tttechnologyllc" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/102941738/admin/dashboard/" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://www.instagram.com/tttechnologyllc/profilecard/?igsh=MWJkM2xsc2ZscDE3Mg%3D%3D" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+            <p>&copy; 2025 TRI TECH TECHNOLOGY. All rights reserved. |
+                <a href="privacy-policy.html" target="_blank" style="color:#dadada;">Privacy Policy ↗</a> |
+                <a href="terms-of-service.html" target="_blank" style="color:#dadada;">Terms of Service ↗</a> |
+                <a href="cookie-policy.html" target="_blank" style="color:#dadada;">Cookie Policy ↗</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

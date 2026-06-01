@@ -1274,28 +1274,21 @@
         /* Image display area — one image shown at a time via JS */
         .case-right {
             position: relative;
-            flex: 0 0 auto;
-            width: 55%;
-            max-width: 680px;
-            min-width: 320px;
+            flex: 1;
             height: calc(100vh - 130px);
-            overflow: visible;
-            align-self: center;
+            overflow: hidden;
         }
 
         .case-right img {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 92%;
-            height: 92%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            object-position: center center;
             opacity: 0;
             transition: opacity 0.5s ease;
             display: block;
-            border-radius: 20px;
         }
 
         .case-right img.active {
@@ -1493,11 +1486,12 @@
             max-width: 100%;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
 
+        
         @media (max-width: 1100px) and (min-width: 769px) {
             .footer-content {
                 grid-template-columns: repeat(4, 1fr);
@@ -1515,6 +1509,9 @@
                 font-size: 13px;
             }
         }
+
+
+
 
         .footer-section h3 {
             font-size: 20px;
@@ -1652,7 +1649,7 @@
             }
 
             .footer-content {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 30px;
             }
 
@@ -1763,6 +1760,10 @@
             position: relative;
         }
 
+        .logo-boost {
+            transform: scale(1.4) !important;
+        }
+
         .logo-track {
             display: flex;
             align-items: center;
@@ -1819,10 +1820,6 @@
             will-change: transform, filter;
             backface-visibility: hidden;
             transform: translateZ(0);
-        }
-
-        .logo-boost {
-            transform: scale(1.4) !important;
         }
 
         .logo-track {
@@ -1965,16 +1962,16 @@ No app downloads. No friction. Just more repeat business.</p>
                     <img src="clients-logo/Clients/KITE-logo.png" alt="KITE Logo" loading="eager" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="eager" decoding="async">
+                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="eager" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/CAP-logo.png" alt="CAP Logo" loading="eager" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="eager" decoding="async">
+                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="eager" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="eager" decoding="async" class="logo-boost">
+                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="eager" decoding="async">
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/NoFilter-logo.PNG" alt="NoFilter Logo" loading="eager" decoding="async">
@@ -1992,10 +1989,10 @@ No app downloads. No friction. Just more repeat business.</p>
                     <img src="clients-logo/Clients/Steakaway-logo.png" alt="Steakaway Logo" loading="eager" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/mysa-logo.png" alt="mysa Logo" loading="eager" decoding="async" class="logo-boost">
+                    <img src="clients-logo/Clients/Mysa-logo.png" alt="Mysa Logo" loading="eager" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/short -ogo.png" alt="short Logo" loading="eager" decoding="async">
+                    <img src="clients-logo/Clients/short-logo.png" alt="PA Logo" loading="eager" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/The-Slab-logo.png" alt="The Slab Logo" loading="eager" decoding="async" class="logo-boost">
@@ -2006,16 +2003,16 @@ No app downloads. No friction. Just more repeat business.</p>
                     <img src="clients-logo/Clients/KITE-logo.png" alt="KITE Logo" loading="lazy" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="lazy" decoding="async">
+                    <img src="clients-logo/Clients/1Extraction-logo.png" alt="Extraction Logo" loading="lazy" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/CAP-logo.png" alt="CAP Logo" loading="lazy" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="lazy" decoding="async">
+                    <img src="clients-logo/Clients/1alkhan-Logo.png" alt="Alkhan Logo" loading="lazy" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy" decoding="async" class="logo-boost">
+                    <img src="clients-logo/Clients/Padel-logo.png" alt="Padel Logo" loading="lazy" decoding="async">
                 </div>
                 <div class="logo-item">
                     <img src="clients-logo/Clients/NoFilter-logo.PNG" alt="NoFilter Logo" loading="lazy" decoding="async">
@@ -2033,25 +2030,26 @@ No app downloads. No friction. Just more repeat business.</p>
                     <img src="clients-logo/Clients/Steakaway-logo" alt="Steakaway Logo" loading="lazy" decoding="async">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/mysa-logo.png" alt="mysa Logo" loading="lazy" decoding="async" class="logo-boost">
+                    <img src="clients-logo/Clients/Mysa-logo" alt="Mysa Logo" loading="lazy" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/short -ogo.png" alt="short Logo" loading="lazy" decoding="async">
+                    <img src="clients-logo/Clients/short-logo" alt="PA Logo" loading="lazy" decoding="async" class="logo-boost">
                 </div>
                 <div class="logo-item">
-                    <img src="clients-logo/Clients/The-Slab-logo.png" alt="The Slab Logo" loading="lazy" decoding="async" class="logo-boost">
+                    <img src="clients-logo/Clients/The-Slab-logo" alt="The Slab Logo" loading="lazy" decoding="async" class="logo-boost">
                 </div>
+                
             </div>
         </div>
     </div>
 
     <div class="stats-bar">
         <div class="stat-item">
-            <span class="stat-number">50,000+</span>
+            <span class="stat-number">75,000+</span>
             <span class="stat-label">Loyalty Cards Issued</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">6 Months</span>
+            <span class="stat-number">8 Months</span>
             <span class="stat-label">Live</span>
         </div>
         <div class="stat-item">
@@ -2553,7 +2551,6 @@ No app downloads. No friction. Just more repeat business.</p>
                     <li><a href="#card-types">MutiPass card</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
@@ -2562,6 +2559,7 @@ No app downloads. No friction. Just more repeat business.</p>
                     <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
                 </ul>
             </div>
+
 
         </div>
 
